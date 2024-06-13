@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Your Stories</title>
+</head>
+<body>
+    <h2>Your Stories</h2>
+{{stories}}
+    {% for story in stories %}
+        <div>{{story.image}}
+            {% if story.image %}
+                <img src="{{ story.image.url }}" alt="Story Media"> 
+            {% endif %}
+            <p>{{ story.caption }}</p>
+            <p>Created at: {{ story.created_at }}</p>
+            {{story.expires_at}}
+        </div>
+    {% endfor %}
+
+</body>
+</html>
